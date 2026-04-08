@@ -1,11 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
-import { Play } from 'lucide-react';
 
 const Hero = () => {
   return (
-    <section className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-slate-950">
+    <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-slate-950">
       {/* Dynamic Background Elements: Frosted Blue & Steel Blue */}
       <div className="absolute top-0 w-[600px] h-[600px] bg-sky-300/10 rounded-full blur-[120px] -translate-y-1/2 opacity-60 mix-blend-screen animate-pulse" />
       <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#4682B4]/20 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 opacity-50 mix-blend-screen" />
@@ -20,22 +19,39 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "easeOut" }}
           className="flex flex-col items-center gap-6"
         >
-          {/* Badge */}
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ delay: 0.2 }}
-            className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl"
-          >
-            <span className="text-sm font-medium text-slate-300 uppercase tracking-widest">
-              Available for freelance
-            </span>
-          </motion.div>
+          {/* Badges Container */}
+          <div className="flex flex-col sm:flex-row items-center gap-4">
+            <motion.div 
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.2 }}
+              className="px-4 py-1.5 rounded-full bg-white/5 border border-white/10 backdrop-blur-md shadow-2xl"
+            >
+              <span className="text-sm font-medium text-slate-300 uppercase tracking-widest">
+                Available for freelance
+              </span>
+            </motion.div>
+
+            <motion.a 
+              href="https://www.youtube.com/@SHyamvFxStudio/videos"
+              target="_blank"
+              rel="noopener noreferrer"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ delay: 0.3 }}
+              className="px-5 py-1.5 rounded-full bg-red-500/10 border border-red-500/30 backdrop-blur-md shadow-[0_0_15px_rgba(239,68,68,0.2)] hover:shadow-[0_0_25px_rgba(239,68,68,0.4)] hover:bg-red-500/20 transition-all cursor-pointer group flex items-center gap-2"
+            >
+              <span className="w-2 h-2 rounded-full bg-red-500 animate-pulse"></span>
+              <span className="text-sm font-bold text-red-100 uppercase tracking-wider group-hover:text-white transition-colors">
+                19K+ YouTube SubscriBERs
+              </span>
+            </motion.a>
+          </div>
 
           {/* Main Headline */}
           <h1 className="text-5xl md:text-7xl lg:text-8xl font-bold tracking-tighter text-white">
             <span className="block mb-2 text-transparent bg-clip-text bg-gradient-to-r from-white via-slate-200 to-slate-400">
-              Shyam VFX Studio
+              SHyam vFx Studio
             </span>
           </h1>
 
@@ -68,14 +84,9 @@ const Hero = () => {
             transition={{ delay: 0.4 }}
             className="flex flex-col sm:flex-row gap-4 mt-8"
           >
-            <button className="group relative px-8 py-4 bg-white text-black font-semibold rounded-full overflow-hidden transition-all hover:scale-105">
-              <span className="relative z-10 flex items-center gap-2">
-                <Play className="w-4 h-4 fill-black" /> View Showreel
-              </span>
-            </button>
-            <button className="px-8 py-4 rounded-full font-semibold text-white border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-105">
+            <a href="#projects" className="px-8 py-4 rounded-full font-semibold text-white border border-white/20 bg-white/5 hover:bg-white/10 backdrop-blur-sm transition-all hover:scale-105 inline-block">
               Explore Projects
-            </button>
+            </a>
           </motion.div>
         </motion.div>
       </div>
