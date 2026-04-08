@@ -5,12 +5,27 @@ import { TypeAnimation } from 'react-type-animation';
 const Hero = () => {
   return (
     <section id="hero" className="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden bg-slate-950">
+      {/* Background Video */}
+      <div className="absolute inset-0 z-0 text-center">
+        <video
+          autoPlay
+          loop
+          muted
+          playsInline
+          className="w-full h-full object-cover"
+          src="/videos/blender/1.mp4"
+        />
+        {/* Dark Overlay to make text readable */}
+        <div className="absolute inset-0 bg-slate-950/70 mix-blend-multiply" />
+        <div className="absolute inset-0 bg-slate-950/60" />
+      </div>
+
       {/* Dynamic Background Elements: Frosted Blue & Steel Blue */}
-      <div className="absolute top-0 w-[600px] h-[600px] bg-sky-300/10 rounded-full blur-[120px] -translate-y-1/2 opacity-60 mix-blend-screen animate-pulse" />
-      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#4682B4]/20 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 opacity-50 mix-blend-screen" />
+      <div className="absolute top-0 w-[600px] h-[600px] bg-sky-300/10 rounded-full blur-[120px] -translate-y-1/2 opacity-60 mix-blend-screen animate-pulse z-0" />
+      <div className="absolute bottom-0 right-0 w-[500px] h-[500px] bg-[#4682B4]/20 rounded-full blur-[100px] translate-x-1/3 translate-y-1/3 opacity-50 mix-blend-screen z-0" />
       
       {/* Subtle Grid Overlay */}
-      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none" />
+      <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-overlay pointer-events-none z-0" />
 
       <div className="relative z-10 max-w-7xl mx-auto px-6 text-center">
         <motion.div
