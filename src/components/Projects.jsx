@@ -61,8 +61,8 @@ const VideoCard = ({ project, onClick }) => {
           muted 
           loop 
           playsInline
-          poster={project.poster}
-          src={project.videoUrl}
+          preload="metadata"
+          src={`${project.videoUrl}#t=0.001`}
         />
       </div>
 
@@ -178,7 +178,6 @@ const Projects = () => {
                 controls
                 autoPlay
                 playsInline
-                poster={activeVideo.poster}
               >
                 Your browser does not support the video tag.
               </video>
